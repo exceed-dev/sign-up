@@ -146,18 +146,42 @@
         margin: 0;
     }
 
-    a {
-        text-decoration: none;
-    }
-
     input,
     button {
         padding: 0;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 }
 
 @layer layout {
     .flexbox {
         display: flex;
+    }
+}
+
+@layer header {
+    .header {
+        position: absolute;
+        top: calc(50 / 16 * 1rem);
+        left: calc(50 / 16 * 1rem);
+    }
+}
+
+@layer main {
+    .image-container {
+        /* position: relative; */
+        height: 100vh;
+    }
+
+    .image-credit {
+        position: relative;
+        bottom: calc(50 / 16 * 1rem);
+        text-align: center;
+        color: var(--color-body-text-inverse);
     }
 }
