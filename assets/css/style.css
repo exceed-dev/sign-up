@@ -1,0 +1,163 @@
+@layer fonts {
+    /* mulish-regular - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 400;
+        src: url("../fonts/mulish-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* mulish-500 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 500;
+        src: url("../fonts/mulish-v18-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* mulish-600 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 600;
+        src: url("../fonts/mulish-v18-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+}
+
+@layer typography {
+    :root {
+        /* font family */
+        --ff-mulish: "Mulish";
+        /* font weight */
+        --fw-regular: 400;
+        --fw-medium: 500;
+        --fw-semibold: 600;
+        /* font size */
+        --fs-36: calc(36 / 16 * 1rem);
+        --fs-18: calc(18 / 16 * 1rem);
+        --fs-16: calc(16 / 16 * 1rem);
+        --fs-13: calc(13 / 16 * 1rem);
+
+        --fs-body: var(--fs-18);
+        --fs-h1: var(--fs-36);
+        --fs-p: var(--fs-16);
+        --fs-input: var(--fs-18);
+        --fs-button: var(--fs-18);
+    }
+
+    body {
+        font-family: var(--ff-mulish), Arial, Helvetica, sans-serif;
+        font-size: var(--fs-body);
+        font-weight: var(--fw-regular);
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: var(--fs-h1);
+        font-weight: var(--fw-semibold);
+    }
+
+    p {
+        font-size: var(--fs-p);
+    }
+
+    input {
+        font-family: var(--ff-mulish), Arial, Helvetica, sans-serif;
+        font-size: var(--fs-input);
+        font-weight: var(--fw-semibold);
+        line-height: 1.1;
+    }
+
+    button {
+        font-family: var(--ff-mulish), Arial, Helvetica, sans-serif;
+        font-size: var(--fs-button);
+        font-weight: var(--fw-semibold);
+        line-height: 1.1;
+    }
+
+    a {
+        font-weight: var(--fw-semibold);
+    }
+}
+
+@layer color {
+    :root {
+        --color-blue-900: hsl(202, 100%, 16%);
+        --color-blue-900t: hsla(202, 100%, 16%, 0.25); /*t mean transparent*/
+        --color-blue-800: hsl(202, 29%, 25%);
+        --color-blue-800t: hsla(202, 29%, 25%, 0.25); /*t mean transparent*/
+        --color-blue-500t: hsla(220, 100%, 50%, 0.25); /*t mean transparent*/
+        --color-blue-300: hsl(220, 100%, 70%);
+        --color-red-400: hsl(0, 100%, 70%);
+        --color-red-400t: hsla(0, 100%, 70%, 0.25); /*t mean transparent*/
+        --color-gray-200: hsl(237, 12%, 64%);
+        --color-gray-200t: hsla(237, 12%, 64%, 0.25); /*t mean transparent*/
+        --color-white: hsl(0, 0%, 100%);
+
+        --color-body-bg: var(--color-white);
+        --color-body-text: var(--color-blue-800);
+        --color-body-text-inverse: var(--color-white);
+        --color-h1-text: var(--color-blue-800);
+        --color-input-bg: var(--color-white);
+        --color-input-text: var(--color-blue-800);
+        --color-input-placeholder: var(--color-gray-200);
+        --color-input-border: var(--color-gray-200);
+        --color-input-border-focus: var(--color-blue-300);
+        --color-input-border-shadow: var(--color-gray-200t);
+        --color-input-border-fs: var(
+            --color-blue-500t
+        ); /* fs mean focus shadow */
+        --color-input-border-invalid: var(--color-red-400);
+        --color-input-border-is: var(
+            --color-red-400t
+        ); /* is mean invalid shadow */
+        --color-button-bg: var(--color-blue-800);
+        --color-button-text: var(--color-white);
+        --color-button-shadow: var(--color-blue-800);
+        --color-button-focus: var(--color-blue-900);
+        --color-button-fs: var(--color-blue-900t); /* fs mean focus shadow */
+        --color-button-hover: var(--color-blue-900);
+        --color-button-hs: var(--color-blue-900t); /* hs mean hover shadow */
+    }
+
+    body {
+        background: var(--color-body-bg);
+        color: var(--color-body-text);
+    }
+
+    h1 {
+        color: var(--color-h1-text);
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+@layer base {
+    *,
+    *::before,
+    *after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    input,
+    button {
+        padding: 0;
+    }
+}
+
+@layer layout {
+    .flexbox {
+        display: flex;
+    }
+}
