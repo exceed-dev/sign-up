@@ -114,7 +114,7 @@
         ); /* is mean invalid shadow */
         --color-button-bg: var(--color-blue-800);
         --color-button-text: var(--color-white);
-        --color-button-shadow: var(--color-blue-800);
+        --color-button-shadow: var(--color-blue-800t);
         --color-button-focus: var(--color-blue-900);
         --color-button-fs: var(--color-blue-900t); /* fs mean focus shadow */
         --color-button-hover: var(--color-blue-900);
@@ -149,6 +149,8 @@
     input,
     button {
         padding: 0;
+        display: block;
+        outline: none;
     }
 
     img {
@@ -173,8 +175,12 @@
 }
 
 @layer main {
+    .main {
+        width: 100%;
+        height: 100vh;
+    }
     .image-container {
-        /* position: relative; */
+        width: 640px;
         height: 100vh;
     }
 
@@ -183,5 +189,69 @@
         bottom: calc(50 / 16 * 1rem);
         text-align: center;
         color: var(--color-body-text-inverse);
+    }
+
+    .form-container {
+        margin: auto;
+    }
+
+    .title {
+        margin-bottom: calc(48 / 16 * 1rem);
+    }
+
+    .input-container {
+        column-gap: calc(64 / 16 * 1rem);
+        margin-bottom: calc(48 / 16 * 1rem);
+    }
+
+    .label {
+        margin-bottom: 4px;
+    }
+
+    .input {
+        background-color: var(--color-input-bg);
+        color: var(--color-input-text);
+        width: calc(348 / 16 * 1rem);
+        height: calc(48 / 16 * 1rem);
+        padding-left: 1rem;
+        margin-bottom: calc(32 / 16 * 1rem);
+        border: 1px solid var(--color-input-border);
+        border-radius: 8px;
+        box-shadow: inset 0px 3px 1px var(--color-input-border-shadow);
+
+        &::placeholder {
+            color: var(--color-input-placeholder);
+        }
+
+        &:focus {
+            border: 2px solid var(--color-input-border-focus);
+            box-shadow: 0px 3px 2px var(--color-input-border-fs);
+        }
+
+        &:user-invalid {
+            border: 1px solid var(--color-input-border-invalid);
+            box-shadow: 0px 3px 1px var(--color-input-border-is);
+        }
+    }
+
+    .button {
+        background-color: var(--color-button-bg);
+        color: var(--color-button-text);
+        width: calc((348 + 16) / 16 * 1rem);
+        height: calc(48 / 16 * 1rem);
+        border: none;
+        border-radius: 8px;
+        margin-bottom: calc(24 / 16 * 1rem);
+        box-shadow: 0px 4px 4px var(--color-button-shadow);
+
+        &:focus {
+            background-color: var(--color-button-focus);
+            box-shadow: 0px 4px 4px var(--color-button-fs);
+        }
+
+        &:hover {
+            background-color: var(--color-button-hover);
+            box-shadow: 0px 4px 4px var(--color-button-hs);
+        }
     }
 }
